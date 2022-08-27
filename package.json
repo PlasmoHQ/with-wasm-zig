@@ -6,7 +6,8 @@
   "author": "lgvic",
   "scripts": {
     "dev": "plasmo dev",
-    "build": "plasmo build"
+    "build": "plasmo build",
+    "build:logic": "zig build-lib src/logic/index.zig -target wasm32-freestanding -dynamic --cache-dir .plasmo/zig"
   },
   "dependencies": {
     "plasmo": "0.52.1",
