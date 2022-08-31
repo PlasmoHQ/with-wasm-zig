@@ -1,0 +1,11 @@
+- Walk thru the AST of a simple Zig program
+
+- A WASM loader
+
+- Automatically add the `wasm-unsafe-eval` csp directive to allow wasm evaluation
+
+- zig AST -> TypeScript AST: this is required for any complex application that want to get out of this. This will be a killer feature for zig.
+- From TS AST -> TS Declaration: https://stackoverflow.com/questions/65213952/how-to-generate-code-from-ast-typescript-parser
+
+- zig scheme which allows importing of zig (with a middle-man injection that handle the wasm bundling and spitting out wasm?)
+- or simply import zig, and we compile and transform it into wasm url (plasmo runs zig build while parcel construct the final manifest)

@@ -39,3 +39,5 @@ keys.json
 
 # typescript
 .tsbuildinfo
+
+*.wasm
