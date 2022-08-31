@@ -1,16 +1,16 @@
+import type { AddWasm, MultiplyWasm } from "math"
+import addWasm from "raw:~/resources/add.wasm"
+import multiplyWasm from "raw:~/resources/multiply.wasm"
 import { useState } from "react"
 
-import { useMath } from "~use-math"
+import { useWasmInstance } from "~use-wasm-instance"
 
 function IndexPopup() {
-  const math = useMath()
+  const addWasmInstance = useWasmInstance<AddWasm>(addWasm)
+  const multiplyWasmInstance = useWasmInstance<MultiplyWasm>(multiplyWasm)
 
   const [a, setA] = useState(0)
   const [b, setB] = useState(0)
-
-  if (!math.isReady) {
-    return null
-  }
 
   return (
     <div
@@ -29,16 +29,20 @@ function IndexPopup() {
         value={`B = ${b}`}
         onChange={(e) => setB(parseInt(e.target.value.substring(4)) || 0)}
       />
-      <input
-        readOnly
-        disabled
-        value={`A + B = ${math.addWasmInstance.exports.add(a, b)}`}
-      />
-      <input
-        readOnly
-        disabled
-        value={`A * B = ${math.multiplyWasmInstance.exports.multiply(a, b)}`}
-      />
+      {addWasmInstance && (
+        <input
+          readOnly
+          disabled
+          value={`A + B = ${addWasmInstance.add(a, b)}`}
+        />
+      )}
+      {multiplyWasmInstance && (
+        <input
+          readOnly
+          disabled
+          value={`A * B = ${multiplyWasmInstance.multiply(a, b)}`}
+        />
+      )}
     </div>
   )
 }
