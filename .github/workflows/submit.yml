@@ -20,7 +20,7 @@ jobs:
           run_install: true
       - uses: korandoru/setup-zig@v1
         with:
-          zig-version: "0.10.0-dev.3685+dae7aeb33"
+          zig-version: master
       - name: Build zig wasm
         run: pnpm build:resources
       - name: Build and zip extension artifact
