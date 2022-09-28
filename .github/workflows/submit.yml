@@ -16,12 +16,17 @@ jobs:
             ${{ runner.os }}-
       - uses: pnpm/action-setup@v2.2.1
         with:
-          version: 7.1.0
+          version: 7.12.2
           run_install: true
+      - uses: korandoru/setup-zig@v1
+        with:
+          zig-version: 0.9.1
+      - name: Build zig wasm
+        run: pnpm build:resources
       - name: Build and zip extension artifact
-        run: pnpm build -- --zip
+        run: pnpm build:plasmo --zip
       - name: Browser Platform Publish
-        uses: PlasmoHQ/bpp@v2
+        uses: PlasmoHQ/bpp@staging
         with:
           keys: ${{ secrets.SUBMIT_KEYS }}
           artifact: build/chrome-mv3-prod.zip
