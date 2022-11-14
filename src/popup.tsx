@@ -19,6 +19,7 @@ function IndexPopup() {
         flexDirection: "column",
         padding: 16
       }}>
+      <h1>Zig Calculator</h1>
       <input
         maxLength={8}
         value={`A = ${a}`}
