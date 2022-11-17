@@ -9,7 +9,9 @@
     "dev:plasmo": "plasmo dev",
     "build": "run-s build:*",
     "build:resources": "zig build --cache-dir .plasmo/zig --prefix-lib-dir resources -p .",
-    "build:plasmo": "plasmo build"
+    "build:plasmo": "plasmo build",
+    "zip": "plasmo build --zip",
+    "package": "run-s build:resources zip"
   },
   "dependencies": {
     "plasmo": "0.57.2",
