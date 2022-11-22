@@ -10,11 +10,10 @@
     "build": "run-s build:*",
     "build:resources": "zig build --cache-dir .plasmo/zig --prefix-lib-dir resources -p .",
     "build:plasmo": "plasmo build",
-    "zip": "plasmo build --zip",
-    "package": "run-s build:resources zip"
+    "package": "plasmo package"
   },
   "dependencies": {
-    "plasmo": "0.59.0",
+    "plasmo": "0.59.1",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
