@@ -2,7 +2,7 @@
   "name": "with-wasm-zig",
   "displayName": "With wasm zig",
   "version": "0.0.0",
-  "description": "A basic Plasmo extension.",
+  "description": "A demo of using WASM inside an extension with Plasmo.",
   "author": "lgvic",
   "scripts": {
     "dev": "run-s build:resources dev:plasmo",
