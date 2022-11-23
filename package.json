@@ -2,29 +2,30 @@
   "name": "with-wasm-zig",
   "displayName": "With wasm zig",
   "version": "0.0.0",
-  "description": "A basic Plasmo extension.",
+  "description": "A demo of using WASM inside an extension with Plasmo.",
   "author": "lgvic",
   "scripts": {
     "dev": "run-s build:resources dev:plasmo",
     "dev:plasmo": "plasmo dev",
     "build": "run-s build:*",
     "build:resources": "zig build --cache-dir .plasmo/zig --prefix-lib-dir resources -p .",
-    "build:plasmo": "plasmo build"
+    "build:plasmo": "plasmo build",
+    "package": "plasmo package"
   },
   "dependencies": {
-    "plasmo": "0.57.2",
+    "plasmo": "0.59.2-alpha.3",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
-    "@plasmohq/prettier-plugin-sort-imports": "3.5.4",
-    "@plasmohq/rps": "1.5.3",
-    "@types/chrome": "0.0.198",
-    "@types/node": "18.11.2",
-    "@types/react": "18.0.21",
-    "@types/react-dom": "18.0.6",
+    "@plasmohq/prettier-plugin-sort-imports": "3.6.0",
+    "@plasmohq/rps": "1.7.0",
+    "@types/chrome": "0.0.202",
+    "@types/node": "18.11.9",
+    "@types/react": "18.0.25",
+    "@types/react-dom": "18.0.9",
     "prettier": "2.7.1",
-    "typescript": "4.8.4"
+    "typescript": "4.9.3"
   },
   "manifest": {
     "content_security_policy": {
